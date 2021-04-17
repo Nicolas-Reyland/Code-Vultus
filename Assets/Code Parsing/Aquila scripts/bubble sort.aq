@@ -1,0 +1,21 @@
+// #name bubble sort
+// #use functions.txt
+
+#setting debug true
+#setting (trace debug) true
+#setting (implicit declaration in assignment) true
+
+decl l [4, 1, 6, 3, 2]
+decl len length($l)
+
+trace $l
+
+for ($i = 0; $i < $len; $i = $i + 1)
+	for ($j = 0; $j < $len - $i - 1; $j ++)
+		if ($l[$j] > $l[$j + 1])
+			swap($l, $j, $j + 1)
+		end-if
+	end-for
+end-for
+
+return($l)

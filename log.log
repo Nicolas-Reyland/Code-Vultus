@@ -1,0 +1,306 @@
++ DEBUG                            ========================= readSourceCode (7) =========================
++ DEBUG [0]                            readSourceCode(1)              : 14 lines read
++ DEBUG [0]                            readSourceCode(1)              : lines purged. remaining: 7
++ DEBUG                            ========================= handleMacro (7) =========================
++ DEBUG [0]                            handleMacro(2)                 : setting macro key: "name" with value "bubble sort"
++ DEBUG                            ========================= code2RawInstructions (7) =========================
++ DEBUG [0]                            code2RawInstructions(3)        : doing line #name bubble sort
++ DEBUG [0]                            code2RawInstructions(3)        : doing line decl l [4, 1, 6, 0, 2]
++ DEBUG [0]                            code2RawInstructions(3)        : doing line trace $l
++ DEBUG [0]                            code2RawInstructions(3)        : doing line $l[3] = 2
++ DEBUG [0]                            code2RawInstructions(3)        : doing line insert_value_at($l, 2, [1, 2])
++ DEBUG [0]                            code2RawInstructions(3)        : doing line $l[2][1] = 3
++ DEBUG [0]                            code2RawInstructions(3)        : doing line return($l)
++ DEBUG                        ========================= algorithmFromSrcCode (6) =========================
++ DEBUG [0]                        algorithmFromSrcCode(0)        : raw_instructions done
++ DEBUG                                                ========================= rawInstr2Instr (12) =========================
++ DEBUG [0]                                                rawInstr2Instr(4)              : from raw instr to instr: "decl l [4, 1, 6, 0, 2]"
++ DEBUG [0]                                                rawInstr2Instr(4)              : trace ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : decl ?
++ DEBUG                                                    ========================= .ctor (13) =========================
++ DEBUG [0]                                                    .ctor(4)                       : new declaration: var_name = l, var_expr = [4, 1, 6, 0, 2], var_type = auto, assignment = True, mode = 0000, exists = False
++ DEBUG [0]                                                    .ctor(4)                       : implicit declaration in assignments, so skipping var existence checks (var exists: False)
++ DEBUG                                                ========================= rawInstr2Instr (12) =========================
++ DEBUG [0]                                                rawInstr2Instr(4)              : from raw instr to instr: "trace $l"
++ DEBUG [0]                                                rawInstr2Instr(4)              : trace ?
++ DEBUG                                                ========================= rawInstr2Instr (12) =========================
++ DEBUG [0]                                                rawInstr2Instr(4)              : from raw instr to instr: "$l[3] = 2"
++ DEBUG [0]                                                rawInstr2Instr(4)              : trace ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : decl ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : assignment ?
++ DEBUG                                                ========================= rawInstr2Instr (12) =========================
++ DEBUG [0]                                                rawInstr2Instr(4)              : from raw instr to instr: "insert_value_at($l, 2, [1, 2])"
++ DEBUG [0]                                                rawInstr2Instr(4)              : trace ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : decl ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : assignment ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : function definition ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : for loop ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : while loop ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : if statement ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : function call ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : expr_string for function call insert_value_at($l, 2, [1, 2])
++ DEBUG                                                ========================= rawInstr2Instr (12) =========================
++ DEBUG [0]                                                rawInstr2Instr(4)              : from raw instr to instr: "$l[2][1] = 3"
++ DEBUG [0]                                                rawInstr2Instr(4)              : trace ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : decl ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : assignment ?
++ DEBUG                                                ========================= rawInstr2Instr (12) =========================
++ DEBUG [0]                                                rawInstr2Instr(4)              : from raw instr to instr: "return($l)"
++ DEBUG [0]                                                rawInstr2Instr(4)              : trace ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : decl ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : assignment ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : function definition ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : for loop ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : while loop ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : if statement ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : function call ?
++ DEBUG [0]                                                rawInstr2Instr(4)              : expr_string for function call return($l)
++ DEBUG                                    ========================= parse (9) =========================
++ DEBUG [3]                                    parse(10)                      : input expression: [4, 1, 6, 0, 2]
++ DEBUG [3]                                    parse(10)                      : dynamic list ?
++ DEBUG                                            ========================= parse (11) =========================
++ DEBUG [3]                                            parse(10)                      : input expression: 4
++ DEBUG [3]                                            parse(10)                      : dynamic list ?
++ DEBUG [3]                                            parse(10)                      : int ?
++ DEBUG                                            ========================= parse (11) =========================
++ DEBUG [3]                                            parse(10)                      : input expression: 1
++ DEBUG [3]                                            parse(10)                      : dynamic list ?
++ DEBUG [3]                                            parse(10)                      : int ?
++ DEBUG                                            ========================= parse (11) =========================
++ DEBUG [3]                                            parse(10)                      : input expression: 6
++ DEBUG [3]                                            parse(10)                      : dynamic list ?
++ DEBUG [3]                                            parse(10)                      : int ?
++ DEBUG                                            ========================= parse (11) =========================
++ DEBUG [3]                                            parse(10)                      : input expression: 0
++ DEBUG [3]                                            parse(10)                      : dynamic list ?
++ DEBUG [3]                                            parse(10)                      : int ?
++ DEBUG                                            ========================= parse (11) =========================
++ DEBUG [3]                                            parse(10)                      : input expression: 2
++ DEBUG [3]                                            parse(10)                      : dynamic list ?
++ DEBUG [3]                                            parse(10)                      : int ?
++ DEBUG                            ========================= execute (7) =========================
++ DEBUG [3]                            execute(10)                    : finished declaration with value assignment: True
+- TRACE                                ========================= updateTracers (8) =========================
+- TRACE [3]                                updateTracers(10)              : updating tracers
+- TRACE [3]                                updateTracers(10)              : checking potential var null
+- TRACE [3]                                updateTracers(10)              : checking potential var l
+- TRACE [3]                                updateTracers(10)              : var l is usable (non-null & assigned)
+- TRACE                                    ========================= checkAllAwaitingEvents (9) =========================
+- TRACE [3]                                    checkAllAwaitingEvents(10)     : checking all var tracers
+- TRACE [3]                                    checkAllAwaitingEvents(10)     : checking all func tracers
+- TRACE [3]                                    checkAllAwaitingEvents(10)     :  <-> 0
+- TRACE                                ========================= updateTracers (8) =========================
+- TRACE [3]                                updateTracers(10)              : checking variable tracers event stack counts
++ DEBUG                                    ========================= parse (9) =========================
++ DEBUG [5]                                    parse(6)                       : input expression: $l
++ DEBUG [5]                                    parse(6)                       : dynamic list ?
++ DEBUG [5]                                    parse(6)                       : int ?
++ DEBUG [5]                                    parse(6)                       : bool ?
++ DEBUG [5]                                    parse(6)                       : float ?
++ DEBUG [5]                                    parse(6)                       : checking for negative expression
++ DEBUG [5]                                    parse(6)                       : AL operations ?
++ DEBUG [5]                                    parse(6)                       : not (!) operator ?
++ DEBUG [5]                                    parse(6)                       : value function call ?
++ DEBUG [5]                                    parse(6)                       : variable ?
++ DEBUG [5]                                    parse(6)                       : list access ?
++ DEBUG [5]                                    parse(6)                       : var by name: $l
++ DEBUG                                        ========================= variableFromName (10) =========================
++ DEBUG [5]                                        variableFromName(6)            : Variable access: l
+- TRACE                                ========================= startTracing (8) =========================
+- TRACE [5]                                startTracing(6)                : enabling tracing for l
+- TRACE                                        ========================= callUpdateHandler (10) =========================
+- TRACE [5]                                        callUpdateHandler(6)           : Calling graphical function
++ DEBUG                            ========================= execute (7) =========================
++ DEBUG [7]                            execute(11)                    : Assignment: $l[3] = 2
++ DEBUG                                ========================= parse (8) =========================
++ DEBUG [7]                                parse(11)                      : input expression: $l[3]
++ DEBUG [7]                                parse(11)                      : dynamic list ?
++ DEBUG [7]                                parse(11)                      : int ?
++ DEBUG [7]                                parse(11)                      : bool ?
++ DEBUG [7]                                parse(11)                      : float ?
++ DEBUG [7]                                parse(11)                      : checking for negative expression
++ DEBUG [7]                                parse(11)                      : AL operations ?
++ DEBUG [7]                                parse(11)                      : not (!) operator ?
++ DEBUG [7]                                parse(11)                      : value function call ?
++ DEBUG [7]                                parse(11)                      : variable ?
++ DEBUG [7]                                parse(11)                      : list access ?
++ DEBUG [7]                                parse(11)                      : list name: $l
++ DEBUG [7]                                parse(11)                      : index: [3]
++ DEBUG                                    ========================= callFunctionByName (9) =========================
++ DEBUG [7]                                    callFunctionByName(11)         : invoking value function list_at dynamically with 2 argument(s)
++ DEBUG                                                                        ========================= parse (18) =========================
++ DEBUG [7]                                                                        parse(11)                      : input expression: $l
++ DEBUG [7]                                                                        parse(11)                      : dynamic list ?
++ DEBUG [7]                                                                        parse(11)                      : int ?
++ DEBUG [7]                                                                        parse(11)                      : bool ?
++ DEBUG [7]                                                                        parse(11)                      : float ?
++ DEBUG [7]                                                                        parse(11)                      : checking for negative expression
++ DEBUG [7]                                                                        parse(11)                      : AL operations ?
++ DEBUG [7]                                                                        parse(11)                      : not (!) operator ?
++ DEBUG [7]                                                                        parse(11)                      : value function call ?
++ DEBUG [7]                                                                        parse(11)                      : variable ?
++ DEBUG [7]                                                                        parse(11)                      : list access ?
++ DEBUG [7]                                                                        parse(11)                      : var by name: $l
++ DEBUG                                                                            ========================= variableFromName (19) =========================
++ DEBUG [7]                                                                            variableFromName(11)           : Variable access: l
++ DEBUG                                                                        ========================= parse (18) =========================
++ DEBUG [7]                                                                        parse(11)                      : input expression: [3]
++ DEBUG [7]                                                                        parse(11)                      : dynamic list ?
++ DEBUG                                                                                ========================= parse (20) =========================
++ DEBUG [7]                                                                                parse(11)                      : input expression: 3
++ DEBUG [7]                                                                                parse(11)                      : dynamic list ?
++ DEBUG [7]                                                                                parse(11)                      : int ?
+- TRACE                                                                ========================= listAtFunction (16) =========================
+- TRACE [7]                                                                listAtFunction(11)             : list_at last event: status: 6 info: Parser.Tracing alter: name: creation var_name: lmain_value: // List ([Integer (4), Integer (1), Integer (6), Integer (0), Integer (2)]) // minor values (num): 0
+- TRACE                                                                    ========================= handleValueFunctionTracing (17) =========================
+- TRACE [7]                                                                    handleValueFunctionTracing(11) : checking all the 1 total function tracers for list_at
+- TRACE                                                                ========================= listAtFunction (16) =========================
+- TRACE [7]                                                                listAtFunction(11)             : list_at last event: status: 6 info: Parser.Tracing alter: name: creation var_name: lmain_value: // List ([Integer (4), Integer (1), Integer (6), Integer (0), Integer (2)]) // minor values (num): 0
++ DEBUG                                    ========================= parse (9) =========================
++ DEBUG [7]                                    parse(11)                      : input expression: 2
++ DEBUG [7]                                    parse(11)                      : dynamic list ?
++ DEBUG [7]                                    parse(11)                      : int ?
++ DEBUG                            ========================= execute (7) =========================
++ DEBUG [7]                            execute(11)                    : assigning $l[3] with expr 2 with value Integer (2) (2nd value assigned: True) and type: int
+- TRACE                                ========================= updateTracers (8) =========================
+- TRACE [7]                                updateTracers(11)              : updating tracers
+- TRACE [7]                                updateTracers(11)              : checking potential var null
+- TRACE                                    ========================= checkAllAwaitingEvents (9) =========================
+- TRACE [7]                                    checkAllAwaitingEvents(11)     : checking all var tracers
+- TRACE [7]                                    checkAllAwaitingEvents(11)     : last tracer event: status: 6 info: Parser.Tracing alter: name: creation var_name: lmain_value: // List ([Integer (4), Integer (1), Integer (6), Integer (0), Integer (2)]) // minor values (num): 0
+- TRACE [7]                                    checkAllAwaitingEvents(11)     : checking all func tracers
+- TRACE [7]                                    checkAllAwaitingEvents(11)     :  <-> 0
+- TRACE                                ========================= updateTracers (8) =========================
+- TRACE [7]                                updateTracers(11)              : checking variable tracers event stack counts
++ DEBUG                                ========================= callFunctionByName (8) =========================
++ DEBUG [9]                                callFunctionByName(12)         : invoking value function insert_value_at dynamically with 3 argument(s)
++ DEBUG                                                                    ========================= parse (17) =========================
++ DEBUG [9]                                                                    parse(12)                      : input expression: $l
++ DEBUG [9]                                                                    parse(12)                      : dynamic list ?
++ DEBUG [9]                                                                    parse(12)                      : int ?
++ DEBUG [9]                                                                    parse(12)                      : bool ?
++ DEBUG [9]                                                                    parse(12)                      : float ?
++ DEBUG [9]                                                                    parse(12)                      : checking for negative expression
++ DEBUG [9]                                                                    parse(12)                      : AL operations ?
++ DEBUG [9]                                                                    parse(12)                      : not (!) operator ?
++ DEBUG [9]                                                                    parse(12)                      : value function call ?
++ DEBUG [9]                                                                    parse(12)                      : variable ?
++ DEBUG [9]                                                                    parse(12)                      : list access ?
++ DEBUG [9]                                                                    parse(12)                      : var by name: $l
++ DEBUG                                                                        ========================= variableFromName (18) =========================
++ DEBUG [9]                                                                        variableFromName(12)           : Variable access: l
++ DEBUG                                                                    ========================= parse (17) =========================
++ DEBUG [9]                                                                    parse(12)                      : input expression: 2
++ DEBUG [9]                                                                    parse(12)                      : dynamic list ?
++ DEBUG [9]                                                                    parse(12)                      : int ?
++ DEBUG                                                                    ========================= parse (17) =========================
++ DEBUG [9]                                                                    parse(12)                      : input expression: [1, 2]
++ DEBUG [9]                                                                    parse(12)                      : dynamic list ?
++ DEBUG                                                                            ========================= parse (19) =========================
++ DEBUG [9]                                                                            parse(12)                      : input expression: 1
++ DEBUG [9]                                                                            parse(12)                      : dynamic list ?
++ DEBUG [9]                                                                            parse(12)                      : int ?
++ DEBUG                                                                            ========================= parse (19) =========================
++ DEBUG [9]                                                                            parse(12)                      : input expression: 2
++ DEBUG [9]                                                                            parse(12)                      : dynamic list ?
++ DEBUG [9]                                                                            parse(12)                      : int ?
+- TRACE                                                                                ========================= CallSite.Target (20) =========================
+- TRACE [9]                                                                                CallSite.Target(12)            : updated (value: // List ([Integer (4), Integer (1), List ([Integer (1), Integer (2)]), Integer (6), Integer (2), Integer (2)]) //)
+- TRACE                                                                            ========================= callUpdateHandler (19) =========================
+- TRACE [9]                                                                            callUpdateHandler(12)          : Calling graphical function
+- TRACE                                ========================= updateTracers (8) =========================
+- TRACE [9]                                updateTracers(12)              : updating tracers
+- TRACE [9]                                updateTracers(12)              : checking potential var null
+- TRACE                                    ========================= checkAllAwaitingEvents (9) =========================
+- TRACE [9]                                    checkAllAwaitingEvents(12)     : checking all var tracers
+- TRACE [9]                                    checkAllAwaitingEvents(12)     : last tracer event: status: 12 info: Parser.VoidFunctionCall alter: name: insertValue var_name: lmain_value: // List ([Integer (4), Integer (1), List ([Integer (1), Integer (2)]), Integer (6), Integer (2), Integer (2)]) // minor values (num): 2
+- TRACE [9]                                    checkAllAwaitingEvents(12)     : checking all func tracers
+- TRACE [9]                                    checkAllAwaitingEvents(12)     :  <-> 0
+- TRACE                                ========================= updateTracers (8) =========================
+- TRACE [9]                                updateTracers(12)              : checking variable tracers event stack counts
+- TRACE [9]                                updateTracers(12)              : stack count changed for l from 1 to 2
++ DEBUG                            ========================= execute (7) =========================
++ DEBUG [11]                            execute(11)                    : Assignment: $l[2][1] = 3
++ DEBUG                                ========================= parse (8) =========================
++ DEBUG [11]                                parse(11)                      : input expression: $l[2][1]
++ DEBUG [11]                                parse(11)                      : dynamic list ?
++ DEBUG [11]                                parse(11)                      : int ?
++ DEBUG [11]                                parse(11)                      : bool ?
++ DEBUG [11]                                parse(11)                      : float ?
++ DEBUG [11]                                parse(11)                      : checking for negative expression
++ DEBUG [11]                                parse(11)                      : AL operations ?
++ DEBUG [11]                                parse(11)                      : not (!) operator ?
++ DEBUG [11]                                parse(11)                      : value function call ?
++ DEBUG [11]                                parse(11)                      : variable ?
++ DEBUG [11]                                parse(11)                      : list access ?
++ DEBUG [11]                                parse(11)                      : list name: $l
++ DEBUG [11]                                parse(11)                      : index: [2, 1]
++ DEBUG                                    ========================= callFunctionByName (9) =========================
++ DEBUG [11]                                    callFunctionByName(11)         : invoking value function list_at dynamically with 2 argument(s)
++ DEBUG                                                                        ========================= parse (18) =========================
++ DEBUG [11]                                                                        parse(11)                      : input expression: $l
++ DEBUG [11]                                                                        parse(11)                      : dynamic list ?
++ DEBUG [11]                                                                        parse(11)                      : int ?
++ DEBUG [11]                                                                        parse(11)                      : bool ?
++ DEBUG [11]                                                                        parse(11)                      : float ?
++ DEBUG [11]                                                                        parse(11)                      : checking for negative expression
++ DEBUG [11]                                                                        parse(11)                      : AL operations ?
++ DEBUG [11]                                                                        parse(11)                      : not (!) operator ?
++ DEBUG [11]                                                                        parse(11)                      : value function call ?
++ DEBUG [11]                                                                        parse(11)                      : variable ?
++ DEBUG [11]                                                                        parse(11)                      : list access ?
++ DEBUG [11]                                                                        parse(11)                      : var by name: $l
++ DEBUG                                                                            ========================= variableFromName (19) =========================
++ DEBUG [11]                                                                            variableFromName(11)           : Variable access: l
++ DEBUG                                                                        ========================= parse (18) =========================
++ DEBUG [11]                                                                        parse(11)                      : input expression: [2, 1]
++ DEBUG [11]                                                                        parse(11)                      : dynamic list ?
++ DEBUG                                                                                ========================= parse (20) =========================
++ DEBUG [11]                                                                                parse(11)                      : input expression: 2
++ DEBUG [11]                                                                                parse(11)                      : dynamic list ?
++ DEBUG [11]                                                                                parse(11)                      : int ?
++ DEBUG                                                                                ========================= parse (20) =========================
++ DEBUG [11]                                                                                parse(11)                      : input expression: 1
++ DEBUG [11]                                                                                parse(11)                      : dynamic list ?
++ DEBUG [11]                                                                                parse(11)                      : int ?
+- TRACE                                                                ========================= listAtFunction (16) =========================
+- TRACE [11]                                                                listAtFunction(11)             : list_at last event: status: 12 info: Parser.VoidFunctionCall alter: name: insertValue var_name: lmain_value: // List ([Integer (4), Integer (1), List ([Integer (1), Integer (2)]), Integer (6), Integer (2), Integer (2)]) // minor values (num): 2
+- TRACE                                                                    ========================= handleValueFunctionTracing (17) =========================
+- TRACE [11]                                                                    handleValueFunctionTracing(11) : checking all the 1 total function tracers for list_at
+- TRACE                                                                ========================= listAtFunction (16) =========================
+- TRACE [11]                                                                listAtFunction(11)             : list_at last event: status: 12 info: Parser.VoidFunctionCall alter: name: insertValue var_name: lmain_value: // List ([Integer (4), Integer (1), List ([Integer (1), Integer (2)]), Integer (6), Integer (2), Integer (2)]) // minor values (num): 2
++ DEBUG                                    ========================= parse (9) =========================
++ DEBUG [11]                                    parse(11)                      : input expression: 3
++ DEBUG [11]                                    parse(11)                      : dynamic list ?
++ DEBUG [11]                                    parse(11)                      : int ?
++ DEBUG                            ========================= execute (7) =========================
++ DEBUG [11]                            execute(11)                    : assigning $l[2][1] with expr 3 with value Integer (3) (2nd value assigned: True) and type: int
+- TRACE                                ========================= updateTracers (8) =========================
+- TRACE [11]                                updateTracers(11)              : updating tracers
+- TRACE [11]                                updateTracers(11)              : checking potential var null
+- TRACE                                    ========================= checkAllAwaitingEvents (9) =========================
+- TRACE [11]                                    checkAllAwaitingEvents(11)     : checking all var tracers
+- TRACE [11]                                    checkAllAwaitingEvents(11)     : last tracer event: status: 12 info: Parser.VoidFunctionCall alter: name: insertValue var_name: lmain_value: // List ([Integer (4), Integer (1), List ([Integer (1), Integer (2)]), Integer (6), Integer (2), Integer (2)]) // minor values (num): 2
+- TRACE [11]                                    checkAllAwaitingEvents(11)     : checking all func tracers
+- TRACE [11]                                    checkAllAwaitingEvents(11)     :  <-> 0
+- TRACE                                ========================= updateTracers (8) =========================
+- TRACE [11]                                updateTracers(11)              : checking variable tracers event stack counts
++ DEBUG                                ========================= callFunctionByName (8) =========================
++ DEBUG [13]                                callFunctionByName(12)         : invoking value function return dynamically with 1 argument(s)
++ DEBUG                                                                ========================= .ctor (16) =========================
++ DEBUG [13]                                                                .ctor(12)                      : Resetting Context in Return Exception constructor. Context: predefined_function_call
++ DEBUG                                ========================= parse (8) =========================
++ DEBUG [13]                                parse(0)                       : input expression: $l
++ DEBUG [13]                                parse(0)                       : dynamic list ?
++ DEBUG [13]                                parse(0)                       : int ?
++ DEBUG [13]                                parse(0)                       : bool ?
++ DEBUG [13]                                parse(0)                       : float ?
++ DEBUG [13]                                parse(0)                       : checking for negative expression
++ DEBUG [13]                                parse(0)                       : AL operations ?
++ DEBUG [13]                                parse(0)                       : not (!) operator ?
++ DEBUG [13]                                parse(0)                       : value function call ?
++ DEBUG [13]                                parse(0)                       : variable ?
++ DEBUG [13]                                parse(0)                       : list access ?
++ DEBUG [13]                                parse(0)                       : var by name: $l
++ DEBUG                                    ========================= variableFromName (9) =========================
++ DEBUG [13]                                    variableFromName(0)            : Variable access: l
